@@ -13,7 +13,8 @@ for arg in "$@"; do
   esac
 done
 
-EXPORT_DIR="$HOME/mac-migration-bundle"
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+EXPORT_DIR="$SCRIPT_DIR/bundle"
 mkdir -p "$EXPORT_DIR"
 
 echo "=== 1. Homebrew ==="
@@ -72,6 +73,7 @@ echo "============================================"
 echo "Migration bundle created at: $EXPORT_DIR"
 echo "============================================"
 echo ""
-echo "Transfer this to new Mac, then run the restore script."
-echo "IMPORTANT: This contains SSH private keys. Use secure transfer"
-echo "  (AirDrop, USB drive, or scp) — NOT cloud storage."
+echo "Bundle is inside the repo at: $EXPORT_DIR"
+echo "Transfer this entire dev-mode folder to the new Mac."
+echo "IMPORTANT: bundle/ contains SSH private keys — do NOT push to git."
+echo "  Use AirDrop, USB drive, or scp."

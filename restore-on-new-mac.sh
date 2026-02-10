@@ -13,11 +13,11 @@ for arg in "$@"; do
   esac
 done
 
-BUNDLE_DIR="$HOME/mac-migration-bundle"
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+BUNDLE_DIR="$SCRIPT_DIR/bundle"
 
 if [ ! -d "$BUNDLE_DIR" ]; then
-  echo "ERROR: Migration bundle not found at $BUNDLE_DIR"
-  echo "Transfer the bundle from your old Mac first."
+  echo "ERROR: bundle/ not found. Run migrate-to-new-mac.sh on the old Mac first."
   exit 1
 fi
 

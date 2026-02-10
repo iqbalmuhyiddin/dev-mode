@@ -21,21 +21,20 @@ Scripts to duplicate my Mac development environment to a new machine.
 ./migrate-to-new-mac.sh
 ```
 
-Creates `~/mac-migration-bundle/` with all configs and keys.
+Creates `bundle/` inside this repo with all configs and keys. The `bundle/` directory is gitignored — it never gets pushed.
 
 Skip Claude Code config (if already migrated separately):
 ```bash
 ./migrate-to-new-mac.sh --skip-claude
 ```
 
-### Transfer the bundle
+### Transfer to the new Mac
 
-Use **AirDrop** or **USB drive**. The bundle contains SSH private keys — do NOT upload to cloud storage.
+Copy the **entire `dev-mode/` folder** (including `bundle/`) via **AirDrop** or **USB drive**. The bundle contains SSH private keys — do NOT upload to cloud storage.
 
 ### On the new Mac (restore)
 
-1. Copy `mac-migration-bundle/` to the new Mac's home directory (`~/`)
-2. Install Xcode Command Line Tools first:
+1. Install Xcode Command Line Tools first:
    ```bash
    xcode-select --install
    ```
